@@ -1,0 +1,116 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    jlondon-wkhtmltox (1.0.6)
+      maestrodev-wget (>= 1.5.0)
+      puppetlabs-stdlib (>= 0)
+    maestrodev-wget (1.7.1)
+    nanliu-staging (1.0.3)
+    previousnext-cloudwatchlogs (0.0.5)
+      puppetlabs-concat (= 1.1.1)
+      puppetlabs-stdlib (>= 1.0.0)
+    puppetlabs-apache (1.3.0)
+      puppetlabs-concat (>= 1.1.1)
+      puppetlabs-stdlib (>= 2.4.0)
+    puppetlabs-mysql (3.6.1)
+      nanliu-staging (< 2.0.0, >= 1.0.1)
+      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
+    puppetlabs-stdlib (4.9.0)
+    saz-memcached (2.8.1)
+      puppetlabs-firewall (>= 0.1.0)
+      puppetlabs-stdlib (>= 3.2.0)
+    willdurand-composer (1.1.1)
+      maestrodev-wget (>= 1.2.0)
+
+GIT
+  remote: git://github.com/mjhas/postfix.git
+  ref: 0.0.8
+  sha: 0ba121c45c4d6f1850ae22fd8e82a1376df4d2f4
+  specs:
+    mjhas-postfix (0.0.8)
+
+GIT
+  remote: git://github.com/previousnext/puppet-database.git
+  ref: master
+  sha: 718d42d49848840f89af6cd562816532602d951f
+  specs:
+    pnx-database (0.0.5)
+      puppetlabs-mysql (>= 1.3.0)
+
+GIT
+  remote: git://github.com/previousnext/puppet-drupal.git
+  ref: master
+  sha: cd2b97dbaa09087074438709c6d71f40c8bb77aa
+  specs:
+    pnx-drupal (0.0.6)
+
+GIT
+  remote: git://github.com/previousnext/puppet-webserver.git
+  ref: e7251d48af7ee116fb4d10adf48e26a1d9213c56
+  sha: e7251d48af7ee116fb4d10adf48e26a1d9213c56
+  specs:
+    pnx-webserver (0.0.13)
+      jlondon-wkhtmltox (= 1.0.6)
+      previousnext-cloudwatchlogs (>= 0)
+      puppetlabs-apache (= 1.3.0)
+      saz-memcached (>= 2.6.0)
+      willdurand-composer (>= 1.1.0)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-apt.git
+  ref: 1.4.0
+  sha: 924e89289b93db60ef0f16a4e71579fa88e037a6
+  specs:
+    puppetlabs-apt (1.3.0)
+      puppetlabs-stdlib (>= 2.2.1)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-concat.git
+  ref: 1.1.1
+  sha: 0f43e1a4bdfe6ea0a2c0ba52dbbec6a0e5da6fba
+  specs:
+    puppetlabs-concat (1.1.1)
+      puppetlabs-stdlib (< 5.0.0, >= 3.2.0)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-firewall.git
+  ref: 1.0.0
+  sha: 97897badae934f9510709a95c94e23b691d005eb
+  specs:
+    puppetlabs-firewall (1.0.0)
+      puppetlabs-stdlib (>= 2.2.1)
+
+GIT
+  remote: git://github.com/puppetlabs/puppetlabs-ntp.git
+  ref: 3.0.2
+  sha: 3e4a537acad35c646b5b39c21053b1be31e6daa3
+  specs:
+    puppetlabs-ntp (0.0.1)
+
+GIT
+  remote: git://github.com/saz/puppet-locales.git
+  ref: v2.2.2
+  sha: 3c077ea1300fc46a8b209d44bcd09a27e3b1b4c4
+  specs:
+    saz-locales (2.2.2)
+
+GIT
+  remote: git://github.com/saz/puppet-timezone.git
+  ref: v3.1.1
+  sha: b3a848de34e03be6b8d9d9bdfcbecdcf2915b229
+  specs:
+    saz-timezone (3.1.1)
+      puppetlabs-stdlib (>= 2.3.0)
+
+DEPENDENCIES
+  mjhas-postfix (>= 0)
+  pnx-database (>= 0)
+  pnx-drupal (>= 0)
+  pnx-webserver (>= 0)
+  puppetlabs-apt (>= 0)
+  puppetlabs-concat (>= 0)
+  puppetlabs-firewall (>= 0)
+  puppetlabs-ntp (>= 0)
+  saz-locales (>= 0)
+  saz-timezone (>= 0)
+

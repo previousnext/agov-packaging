@@ -1,0 +1,15 @@
+forge "http://forge.puppetlabs.com"
+
+# Contrib.
+mod 'puppetlabs/apt',      :git => 'git://github.com/puppetlabs/puppetlabs-apt.git',      :ref => '1.4.0'
+mod 'puppetlabs/ntp',      :git => 'git://github.com/puppetlabs/puppetlabs-ntp.git',      :ref => '3.0.2'
+mod 'puppetlabs/firewall', :git => 'git://github.com/puppetlabs/puppetlabs-firewall.git', :ref => '1.0.0'
+mod 'puppetlabs/concat',   :git => 'git://github.com/puppetlabs/puppetlabs-concat.git',   :ref => '1.1.1'
+mod 'saz/timezone',        :git => 'git://github.com/saz/puppet-timezone.git',            :ref => 'v3.1.1'
+mod 'saz/locales',         :git => 'git://github.com/saz/puppet-locales.git',             :ref => 'v2.2.2'
+mod 'mjhas/postfix',       :git => 'git://github.com/mjhas/postfix.git',                  :ref => '0.0.8'
+mod 'pnx/drupal',          :git => 'git://github.com/previousnext/puppet-drupal.git'
+
+# Layers.
+mod 'pnx/webserver',       :git => 'git://github.com/previousnext/puppet-webserver.git', :ref => 'e7251d48af7ee116fb4d10adf48e26a1d9213c56'
+mod 'pnx/database',        :git => 'git://github.com/previousnext/puppet-database.git'

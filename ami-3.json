@@ -1,0 +1,34 @@
+{
+  "provisioners": [
+    {
+      "type":        "file",
+      "source":      "./puppet",
+      "destination": "/tmp/puppet"
+    },
+    {
+      "type":            "shell",
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+      "scripts": [
+        "scripts/base.sh",
+        "scripts/provision.sh",
+        "scripts/install.sh",
+        "scripts/cleanup.sh"
+      ]
+    }
+  ],
+  "builders": [
+    {
+      "type":          "amazon-ebs",
+      "region":        "ap-southeast-2",
+      "source_ami":    "ami-fddabdc7",
+      "instance_type": "m3.medium",
+      "ssh_username":  "ubuntu",
+      "ami_name":      "agov 7.x-3.x {{isotime \"20060102\"}}",
+      "tags": {
+        "OS_Version": "Ubuntu",
+        "Release":    "14.04",
+        "aGov":       "7.x-3.0-alpha1"
+      }
+    }
+  ]
+}
