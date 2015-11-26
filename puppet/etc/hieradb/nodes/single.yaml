@@ -1,0 +1,26 @@
+classes:
+  - database
+  - drupal
+  - webserver
+
+drupal:
+  local:
+    project:        'agov'
+    environment:    'test'
+    dir:            '/data'
+    docroot:        'app'
+    owner:          'www-data'
+    domain:         'agov.test'
+    mysql_database: 'test'
+    mysql_username: 'agov'
+    mysql_password: 'agov'
+
+databases:
+  agov:
+    user:     'agov'
+    password: 'agov'
+    host:     'localhost'
+
+env:
+  PATH:
+    value: '$PATH:/data/bin'

@@ -1,12 +1,9 @@
 classes:
   - apt
-  - database
-  - drupal
   - locales
   - ntp
   - timezone
   - postfix
-  - webserver
 
 apt::always_apt_update: true
 apt::disable_keys:      true
@@ -20,21 +17,3 @@ timezone::timezone: 'Australia/Sydney'
 
 ntp:servers:
   - 'ntp.ubuntu.com'
-
-drupal:
-  local:
-    project:        'agov'
-    environment:    'test'
-    dir:            '/data'
-    docroot:        'app'
-    owner:          'www-data'
-    domain:         'agov.test'
-    mysql_database: 'test'
-    mysql_username: 'agov'
-    mysql_password: 'agov'
-
-databases:
-  agov:
-    user:     'agov'
-    password: 'agov'
-    host:     'localhost'

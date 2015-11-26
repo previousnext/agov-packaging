@@ -1,0 +1,39 @@
+{
+  "variables": {
+    "sn": "Pay-As-You-Go",
+    "ps": "credentials-azure",
+    "sa": ""
+  },
+  "provisioners": [
+    {
+      "type":        "file",
+      "source":      ".",
+      "destination": "/tmp/packaging"
+    },
+    {
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+      "inline_shebang":  "/bin/bash -x",
+      "type":            "shell",
+      "scripts": [
+        "scripts/base.sh",
+        "scripts/single.sh",
+        "scripts/8x.sh",
+        "scripts/cleanup.sh"
+      ]
+    }
+  ],
+  "builders": [
+    {
+      "type":                      "azure",
+      "publish_settings_path":     "{{user `ps`}}",
+      "subscription_name":         "{{user `sn`}}",
+      "storage_account":           "{{user `sa`}}",
+      "storage_account_container": "images",
+      "os_type":                   "Linux",
+      "os_image_label":            "Ubuntu Server 14.04 LTS",
+      "location":                  "Australia East",
+      "instance_size":             "Small",
+      "user_image_label":          "aGov_8.x-1.0-alpha1_Ubuntu_1404_LTS_Single"
+    }
+  ]
+}

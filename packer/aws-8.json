@@ -1,0 +1,34 @@
+{
+  "provisioners": [
+    {
+      "type":        "file",
+      "source":      ".",
+      "destination": "/tmp/packaging"
+    },
+    {
+      "type":            "shell",
+      "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
+      "scripts": [
+        "scripts/base.sh",
+        "scripts/single.sh",
+        "scripts/8x.sh",
+        "scripts/cleanup.sh"
+      ]
+    }
+  ],
+  "builders": [
+    {
+      "type":          "amazon-ebs",
+      "region":        "ap-southeast-2",
+      "source_ami":    "ami-fddabdc7",
+      "instance_type": "m3.medium",
+      "ssh_username":  "ubuntu",
+      "ami_name":      "aGov 8.x-1.0-alpha1 {{isotime \"20060102\"}}",
+      "tags": {
+        "OS_Version": "Ubuntu",
+        "Release":    "14.04",
+        "aGov":       "8.x-1.0-alpha1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Name:        mount-smb
+# Author:      Nick Schuch
+# Description: Helper script to mount SMB share
+# Args:
+#   1 = SOURCE
+#   2 = TARGET
+#   3 = UID
+#   4 = GID
+#   5 = DIR
+#   6 = MODE
+#   7 = USER
+#   8 = PASS
+
+echo "${1} ${2} cifs uid=${3},gid=${4},dir_mode=${5},file_mode=${6},vers=2.1,username=${7},password=${8}" >> /etc/fstab
+mount -a

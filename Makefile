@@ -1,5 +1,16 @@
-ami-3:
-	# Cleaning up vendor / modules / librarian / bundler.
+clean:
 	rm -fR puppet/vendor puppet/modules puppet/.tmp puppet/.bundle
-	# Running packer.
-	packer build ami-3.json
+
+aws-3: clean
+	packer build packer/aws-3.json
+
+aws-8: clean
+	packer build packer/aws-8.json
+
+azure-8: clean
+	packer build packer/azure-8.json
+
+azure-8-ha: clean
+	packer build packer/azure-8-ha.json
+
+all: aws-3 azure-8 azure-8-ha

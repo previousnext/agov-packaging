@@ -4,7 +4,9 @@
 # Description: Provision with the Puppet manifest.
 # Author:      Nick Schuch
 
-DIR='/tmp/puppet'
+export FACTER_node=single
+
+DIR='/tmp/packaging/puppet'
 
 cd $DIR && bundle install --path vendor/bundle
 cd $DIR && bundle exec librarian-puppet install

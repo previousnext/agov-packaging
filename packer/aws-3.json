@@ -10,7 +10,7 @@
       "execute_command": "echo 'ubuntu' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
         "scripts/base.sh",
-        "scripts/provision.sh",
+        "scripts/single.sh",
         "scripts/install.sh",
         "scripts/cleanup.sh"
       ]

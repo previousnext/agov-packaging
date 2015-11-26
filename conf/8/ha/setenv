@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Name:        setenv
+# Description: Helper script to set global environment variables
+# Author:      Nick Schuch
+
+VAR="${1}='${2}'"
+
+echo "${VAR}" >> /etc/environment
+echo "export ${VAR}" >> /etc/apache2/envvars
